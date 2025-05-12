@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lavanya Sharma - Resume</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Variables */
+        :root {
+            --primary-color: #0071e3;
+            --secondary-color: #86868b;
+            --background-color: #ffffff;
+            --text-color: #1d1d1f;
+            --section-bg: #f5f5f7;
+            --accent-color: #2997ff;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+            --spacing-unit: 8px;
+        }
+
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.5;
+            color: var(--text-color);
+            background-color: var(--background-color);
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, h5 {
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: calc(var(--spacing-unit) * 3);
+        }
+
+        h2 {
+            font-size: 1.75rem;
+            margin-bottom: calc(var(--spacing-unit) * 2);
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+            width: 40px;
+            height: 4px;
+            background-color: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            margin-bottom: var(--spacing-unit);
+        }
+
+        p {
+            margin-bottom: calc(var(--spacing-unit) * 2);
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 calc(var(--spacing-unit) * 2);
+        }
+
+        section {
+            padding: calc(var(--spacing-unit) * 10) 0;
+        }
+
+        section:nth-child(even) {
+            background-color: var(--section-bg);
+        }
+
+        .header {
+            padding: calc(var(--spacing-unit) * 12) 0;
+            background: linear-gradient(135deg, #f5f5f7 0%, #ffffff 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: calc(var(--spacing-unit) * 2) 0;
+            transition: var(--transition);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-weight: 600;
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: calc(var(--spacing-unit) * 3);
+        }
+
+        .nav-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            padding: calc(var(--spacing-unit)) calc(var(--spacing-unit) * 2);
+            border-radius: 20px;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+            background-color: rgba(0, 113, 227, 0.1);
+        }
+
+        /* Header Profile */
+        .profile {
+            display: flex;
+            align-items: center;
+            gap: calc(var(--spacing-unit) * 5);
+        }
+
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid white;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .profile-image:hover {
+            transform: scale(1.05);
+        }
+
+        .profile-info h1 {
+            margin-bottom: calc(var(--spacing-unit));
+        }
+
+        .profile-title {
+            color: var(--secondary-color);
+            font-size: 1.2rem;
+            margin-bottom: calc(var(--spacing-unit) * 2);
+        }
+
+        .profile-contact {
+            display: flex;
+            gap: calc(var(--spacing-unit) * 2);
+            margin-top: calc(var(--spacing-unit) * 3);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: calc(var(--spacing-unit));
+            color: var(--text-color);
+        }
+
+        .contact-item i {
+            color: var(--primary-color);
+        }
+
+        /* Education Section */
+        .education-card {
+            background-color: white;
+            border-radius: 12px;
+            padding: calc(var(--spacing-unit) * 3);
+            margin-bottom: calc(var(--spacing-unit) * 3);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .education-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .education-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: calc(var(--spacing-unit) * 2);
+        }
+
+        .university {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .year {
+            color: var(--secondary-color);
+            font-weight: 500;
+        }
+
+        /* Skills Section */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: calc(var(--spacing-unit) * 3);
+        }
+
+        .skill-category {
+            background-color: white;
+            border-radius: 12px;
+            padding: calc(var(--spacing-unit) * 3);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .skill-category h3 {
+            margin-bottom: calc(var(--spacing-unit) * 2);
+            color: var(--primary-color);
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-list li {
+            margin-bottom: calc(var(--spacing-unit));
+            position: relative;
+            padding-left: calc(var(--spacing-unit) * 3);
+        }
+
+        .skill-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 8px;
+            height: 8px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: calc(var(--spacing-unit) * 3);
+        }
+
+        .project-card {
+            background-color: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .project-info {
+            padding: calc(var(--spacing-unit) * 3);
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: calc(var(--spacing-unit));
+            margin-top: calc(var(--spacing-unit) * 2);
+        }
+
+        .project-tag {
+            background-color: rgba(0, 113, 227, 0.1);
+            color: var(--primary-color);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--text-color);
+            color: white;
+            padding: calc(var(--spacing-unit) * 5) 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: calc(var(--spacing-unit) * 2);
+            margin-top: calc(var(--spacing-unit) * 3);
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .profile {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .profile-image {
+                width: 150px;
+                height: 150px;
+            }
+
+            .profile-contact {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            h2::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .education-header {
+                flex-direction: column;
+                gap: var(--spacing-unit);
+            }
+
+            .projects-grid, .skills-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        section {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+
+        section:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        section:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        section:nth-child(4) {
+            animation-delay: 0.6s;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container nav-container">
+            <a href="#" class="nav-logo">LS</a>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#education">Education</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header / About -->
+    <header id="about" class="header">
+        <div class="container">
+            <div class="profile">
+                <img src="lava.jpg" alt="Lavanya Sharma" class="profile-image">
+                <div class="profile-info">
+                    <h1>Lavanya Sharma</h1>
+                    <div class="profile-title">B.Tech CSE Student</div>
+                    <p>Passionate computer science student with a focus on AI and machine learning. Dedicated to solving complex problems through innovative technology solutions.</p>
+                    <div class="profile-contact">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>sharmalavanya077@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+91 78272 79528</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>New Delhi, India</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Education Section -->
+    <section id="education">
+        <div class="container">
+            <h2>Education</h2>
+            <div class="education-card">
+                <div class="education-header">
+                    <div class="university">South Asian University</div>
+                    <div class="year">2024 - 2028</div>
+                </div>
+                <h3>Bachelor of Technology in Computer Science and Engineering</h3>
+                <p>Currently pursuing a comprehensive program covering various aspects of computer science including algorithms, data structures, artificial intelligence, machine learning, and software engineering.</p>
+                <p>CGPA: 9.4/10</p>
+                <p>Relevant Coursework:</p>
+                <ul class="skill-list">
+                    <li>Data Structures and Algorithms</li>
+                    <li>Object-Oriented Programming</li>
+                    <li>Database Management Systems</li>
+                    <li>Machine Learning Fundamentals</li>
+                    <li>Computer Networks</li>
+                    <li>Operating Systems</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <h2>Skills</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Programming Languages</h3>
+                    <ul class="skill-list">
+                        <li>Python</li>
+                        <li>Java</li>
+                        <li>C/C++</li>
+                        <li>JavaScript</li>
+                        <li>HTML/CSS</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Technologies & Frameworks</h3>
+                    <ul class="skill-list">
+                        <li>React.js</li>
+                        <li>Node.js</li>
+                        <li>TensorFlow</li>
+                        <li>PyTorch</li>
+                        <li>Git & GitHub</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Areas of Interest</h3>
+                    <ul class="skill-list">
+                        <li>Artificial Intelligence</li>
+                        <li>Machine Learning</li>
+                        <li>Web Development</li>
+                        <li>Data Structures</li>
+                        <li>Algorithms</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Soft Skills</h3>
+                    <ul class="skill-list">
+                        <li>Problem Solving</li>
+                        <li>Team Collaboration</li>
+                        <li>Project Management</li>
+                        <li>Technical Writing</li>
+                        <li>Public Speaking</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2>Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="AI Project" class="project-image">
+                    <div class="project-info">
+                        <h3>Machine Learning Image Classifier</h3>
+                        <p>Developed a deep learning model to classify images using convolutional neural networks.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">TensorFlow</span>
+                            <span class="project-tag">CNN</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="https://images.pexels.com/photos/270360/pexels-photo-270360.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Web App" class="project-image">
+                    <div class="project-info">
+                        <h3>Student Portal Web Application</h3>
+                        <p>Created a comprehensive web portal for students to manage courses, assignments, and academic resources.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">React</span>
+                            <span class="project-tag">Node.js</span>
+                            <span class="project-tag">MongoDB</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Algorithm Visualization" class="project-image">
+                    <div class="project-info">
+                        <h3>Algorithm Visualization Tool</h3>
+                        <p>Built an interactive web-based tool to visualize various sorting and graph algorithms.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">JavaScript</span>
+                            <span class="project-tag">HTML5 Canvas</span>
+                            <span class="project-tag">CSS3</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <h3>Lavanya Sharma</h3>
+                <p>B.Tech CSE Student | South Asian University</p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/lavanya-sharma-bbb866349?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BjnkLaSX9Rs2ftlgfKhEmuw%3D%3D" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/Lav-web" class="social-link"><i class="fab fa-github"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Navigation highlighting and transparency
+        const nav = document.querySelector('.nav');
+        const sections = document.querySelectorAll('section, header');
+        const navLinks = document.querySelectorAll('.nav-links a');
+
+        window.addEventListener('scroll', () => {
+            // Add shadow to nav on scroll
+            if (window.scrollY > 10) {
+                nav.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+            } else {
+                nav.style.boxShadow = 'none';
+            }
+
+            // Highlight current section in navigation
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.scrollY >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').substring(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Animate elements when they enter viewport
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.skill-category, .project-card, .education-card');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+                
+                if (elementPosition < screenPosition) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
+
+        // Initialize elements to be animated
+        document.addEventListener('DOMContentLoaded', () => {
+            const elements = document.querySelectorAll('.skill-category, .project-card, .education-card');
+            elements.forEach(element => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(20px)';
+                element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            });
+            
+            // Run once on load
+            animateOnScroll();
+        });
+
+        // Run on scroll
+        window.addEventListener('scroll', animateOnScroll);
+    </script>
+</body>
+</html>
